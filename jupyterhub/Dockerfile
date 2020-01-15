@@ -1,0 +1,8 @@
+FROM jupyterhub/jupyterhub:1.0
+
+COPY jupyterhub_config.py .
+
+RUN wget https://github.com/jupyterhub/jupyterhub/raw/master/examples/cull-idle/cull_idle_servers.py
+
+RUN pip install \
+    dockerspawner==0.11.1

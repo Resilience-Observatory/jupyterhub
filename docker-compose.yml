@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  jupyterhub:
+    build: jupyterhub
+    image: local/jupyterhub
+    container_name: jupyterhub
+    ports:
+      - "8000:8000"
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
+      - jupyterhub_data:/srv/jupyterhub
+    environment:
+      - DOCKER_JUPYTER_CONTAINER=local/datascience-notebook
+      - DOCKER_NETWORK_NAME=${COMPOSE_PROJECT_NAME}_default
+      - HUB_IP=jupyterhub
+      - HOST
+    restart: always
+
+  datascience-notebook:
+    build: datascience-notebook
+    image: local/datascience-notebook
+    network_mode: none
+    command: echo
+
+volumes:
+  jupyterhub_data:
