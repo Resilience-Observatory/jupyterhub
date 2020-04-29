@@ -7,7 +7,6 @@ services:
     container_name: jupyterhub
     ports:
       - "8000:8000"
-    network_mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/passwd:/etc/passwd:ro
@@ -18,6 +17,8 @@ services:
       - DOCKER_NETWORK_NAME=${COMPOSE_PROJECT_NAME}_default
       - HUB_IP=jupyterhub
       - HOST
+    networks:
+      - jupyterhub
     restart: always
 
   datascience-notebook:
@@ -28,3 +29,7 @@ services:
 
 volumes:
   jupyterhub_data:
+
+networks:
+  jupyterhub:
+    driver: bridge

@@ -1,4 +1,4 @@
-# JupyterHub deployment in use at Cabify Chair ETSIT UPM
+# JupyterHub deployment for the resilience COVID-19 observatory
 
 This is a [JupyterHub](https://jupyter.org/hub) deployment based on
 Docker.
