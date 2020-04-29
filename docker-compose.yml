@@ -14,7 +14,6 @@ services:
       - jupyterhub_data:/srv/jupyterhub
     environment:
       - DOCKER_JUPYTER_CONTAINER=local/datascience-notebook
-      - DOCKER_NETWORK_NAME=${COMPOSE_PROJECT_NAME}_default
       - HUB_IP=jupyterhub
       - HOST
     networks:
