@@ -447,7 +447,7 @@ c.JupyterHub.services = [
 #    - default: jupyterhub.spawner.LocalProcessSpawner
 #    - localprocess: jupyterhub.spawner.LocalProcessSpawner
 #    - simple: jupyterhub.spawner.SimpleLocalProcessSpawner
-#import os
+import os
 #from jupyterhub.utils import random_port
 #from dockerspawner import SystemUserSpawner
 #class custom_spawner(SystemUserSpawner):
