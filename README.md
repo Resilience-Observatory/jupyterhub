@@ -30,7 +30,7 @@ following changes:
 
 Other changes you may like to make:
 
-- Edit [`jupyterlab/Dockerfile`](jupyterlab/Dockerfile) to include the
+- Edit [`datascience-notebook/Dockerfile`](jupyterlab/Dockerfile) to include the
   software you like.
 
 ### Run!
