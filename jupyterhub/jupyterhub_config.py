@@ -492,7 +492,8 @@ c.DockerSpawner.notebook_dir = notebook_dir
 # Mount the real user's Docker volume on the host to the notebook user's
 # notebook directory in the container
 #c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir }
-c.DockerSpawner.volumes = { '/media/flash/resilience_jupyterhub/': notebook_dir }
+host_data_path = os.environ.get('HOST_DATA_PATH')
+c.DockerSpawner.volumes = { host_data_path: notebook_dir }
 
 ## Path to SSL certificate file for the public facing interface of the proxy
 #
