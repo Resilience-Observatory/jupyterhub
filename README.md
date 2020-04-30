@@ -19,20 +19,11 @@ the [blog
 post](https://opendreamkit.org/2018/10/17/jupyterhub-docker/) first,
 to be sure you understand the configuration.
 
-Then, if you like, clone this repository and apply (at least) the
-following changes:
-
-- In [`.env`](.env), set the variable `HOST` to the name of the server you
-  intend to host your deployment on.
-- In
-  [`jupyterhub/jupyterhub_config.py`](jupyterhub/jupyterhub_config.py),
-  edit the *Authenticator* section and the *DockerSpawner* section.
-
-Other changes you may like to make:
+Chhanges you may like to make:
 
 - Edit [`datascience-notebook/Dockerfile`](jupyterlab/Dockerfile) to include the
   software you like.
-
+- In [`.env`](.env), change some variables.
 ### Run!
 
 Once you are ready, build and launch the application with
