@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 
 services:
   jupyterhub:
@@ -11,11 +11,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
-      - jupyterhub_data:/srv/jupyterhub
     environment:
-      - DOCKER_JUPYTER_CONTAINER=local/datascience-notebook
-      - HUB_IP=jupyterhub
-      - HOST
+      - DOCKER_JUPYTER_CONTAINER=${DOCKER_JUPYTER_CONTAINER}
+      - HOST_DATA_PATH=${HOST_DATA_PATH}
+      - DOCKER_NETWORK_NAME=${DOCKER_NETWORK_NAME}
+      - ADMIN_USER=${ADMIN_USER}
     networks:
       - jupyterhub
     restart: always
@@ -26,9 +26,7 @@ services:
     network_mode: none
     command: echo
 
-volumes:
-  jupyterhub_data:
-
 networks:
   jupyterhub:
+    name: ${DOCKER_NETWORK_NAME}
     driver: bridge
