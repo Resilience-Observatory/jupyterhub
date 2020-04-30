@@ -31,6 +31,20 @@ RUN conda install --quiet --yes \
 
 RUN pip install \
     geopandas \
+    pandarallel \
+    gpxpy \
+    geopy \
+    joblib \
+    folium \
+    descartes \
+    plotly \
+    arcgis \
+    dash \
+    dash-core-components \
+    dash-html-components \
+    mysql-connector-python \
+    python-igraph \
+    jupyter_contrib_nbextensions \
     folium \
     descartes \
     mysql-connector-python \
