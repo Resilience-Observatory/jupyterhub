@@ -6,7 +6,7 @@ import os
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 c.DockerSpawner.use_internal_hostname = True
 c.DockerSpawner.image = os.environ['DOCKER_JUPYTER_CONTAINER']
-c.DockerSpawner.remove_containers = False
+c.DockerSpawner.remove_containers = True
 c.DockerSpawner.network_name = os.environ['DOCKER_NETWORK_NAME']
 c.JupyterHub.hub_ip = '0.0.0.0'
 c.JupyterHub.hub_connect_ip = 'jupyterhub'
