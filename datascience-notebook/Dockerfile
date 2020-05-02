@@ -45,6 +45,7 @@ RUN pip install --upgrade pip && \
     arcgis \
     autopep8 \
     bokeh \
+    chart-studio \
     dash \
     dash-core-components \
     dash-html-components \
@@ -62,6 +63,8 @@ RUN pip install --upgrade pip && \
     mlinsights \
     modin[all] \
     mysql-connector-python \
+    networkx \
+    nltk \
     pandarallel \
     partridge[full] \
     plotly \
